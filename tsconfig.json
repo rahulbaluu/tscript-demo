@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2023",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": ["node", "@cucumber/cucumber"]
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
