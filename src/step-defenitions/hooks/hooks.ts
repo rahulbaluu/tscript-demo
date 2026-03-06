@@ -16,7 +16,7 @@ AfterAll(async function () {
 
 //Before hook: Runs before each scenario
 Before(async function () {
-    browser = await chromium.launch({headless: false});
+    browser = await chromium.launch({headless: true});
     pageFixture.page = await browser.newPage();
 })
 
