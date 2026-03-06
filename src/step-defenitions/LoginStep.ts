@@ -13,7 +13,7 @@ Given('Enter the correct username', async function () {
 });
 
 When('Enter the correct password', async function () {
-  await pageFixture.page.locator('[data-qa="login-password"]').fill('Rahul1234')
+  await pageFixture.page.locator('[data-qa="login-password"]').fill('Rahul1235')
 });
 
 When('Click the login button', async function () {
