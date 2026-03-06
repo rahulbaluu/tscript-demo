@@ -25,4 +25,17 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Cucumber tests
-        run: npx cucumber-js
+        run: npx cucumber-js --format json:reports/cucumber-report.json
+
+      - name: Upload results to Xray
+        run: |
+          TOKEN=$(curl -H "Content-Type: application/json" \
+          -X POST \
+          --data '{"client_id":"${{ secrets.XRAY_CLIENT_ID }}","client_secret":"${{ secrets.XRAY_CLIENT_SECRET }}"}' \
+          https://xray.cloud.getxray.app/api/v2/authenticate | tr -d '"')
+
+          curl -H "Content-Type: application/json" \
+          -H "Authorization: Bearer $TOKEN" \
+          -X POST \
+          --data @reports/cucumber-report.json \
+          https://xray.cloud.getxray.app/api/v2/import/execution/cucumber

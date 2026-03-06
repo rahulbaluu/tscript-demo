@@ -1,5 +1,6 @@
 Feature: Login Page
 
+@TA-1
 Scenario: Login Page logged in with correct username and password
   Given Enter the correct username
   When Enter the correct password
