@@ -9,7 +9,7 @@ Scenario: Login Page logged in with correct username and password
 
 @TA-3
 Scenario: Unsuccessful Login try with wrong password
-  Given Enter the username 
+  Given Enter the correct username 
   And Enter the wrong password
-  When Click the Login button
+  When Click the login button
   Then Verify the Error message displayed

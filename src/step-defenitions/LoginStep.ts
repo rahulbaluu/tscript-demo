@@ -25,23 +25,12 @@ Then('Verify user is in Login page', async function () {
   console.log("Passed")
 });
 
-
-Given('Enter the username', async function () {
-  
-  await pageFixture.page.goto(url);
-  //await pageFixture.page.getByRole('button', { name: 'Consent' }).click();
-  await pageFixture.page.locator('[data-qa="login-email"]').fill('rahul4321@gmail.com')
-});
-
 When('Enter the wrong password', async function () {
   await pageFixture.page.locator('[data-qa="login-password"]').fill('Rahul1235')
 });
 
-When('Click the login button', async function () {
-  await pageFixture.page.locator('[data-qa="login-button"]').click();
-});
-
 Then('Verify the Error message displayed', async function () {
-  const errorMessage = this.page.locator('p:has-text("Your email or password is incorrect!")');
-  await expect(errorMessage).toHaveText('Your email or password is incorrect!');
+  const errorMessage = pageFixture.page.getByText('Your email or password is incorrect!');
+  await expect(errorMessage).toBeVisible();
+  console.log("Passed")
 });
