@@ -26,7 +26,7 @@ Then('Verify user is in Login page', async function () {
 });
 
 When('Enter the wrong password', async function () {
-  await pageFixture.page.locator('[data-qa="login-password"]').fill('Rahul1235')
+  await pageFixture.page.locator('[data-qa="login-password"]').fill('Rahul1234')
 });
 
 Then('Verify the Error message displayed', async function () {
