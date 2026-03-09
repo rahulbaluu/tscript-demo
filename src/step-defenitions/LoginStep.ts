@@ -8,7 +8,7 @@ const url = "https://automationexercise.com/login"
 Given('Enter the correct username', async function () {
   
   await pageFixture.page.goto(url);
-  await pageFixture.page.getByRole('button', { name: 'Consent' }).click();
+  //await pageFixture.page.getByRole('button', { name: 'Consent' }).click();
   await pageFixture.page.locator('[data-qa="login-email"]').fill('rahul4321@gmail.com')
 });
 
